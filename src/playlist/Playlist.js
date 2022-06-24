@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Playlist() {
   const { value } = useContext(PlaylistProvider);
   const [state, dispatch] = value;
-  const fail = <Link to="/">Search and create playlist</Link>;
+  const fail = <Link to="/Search">Search and create playlist</Link>;
 
   function addtofavourite(val) {
     dispatch({ type: "STAR", value: val });
