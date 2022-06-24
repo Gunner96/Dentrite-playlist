@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/Dentrite-playlist/static/js/main.b7a9de28.js",
+    "index.html": "/Dentrite-playlist/index.html",
+    "main.b7a9de28.js.map": "/Dentrite-playlist/static/js/main.b7a9de28.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.b7a9de28.js"
+  ]
+}
