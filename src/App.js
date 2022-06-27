@@ -4,8 +4,9 @@ import Nav from "./nav/Nav";
 import { Routes, Route } from "react-router-dom";
 import Playlist from "./playlist/Playlist";
 import Favourite from "./favourite/Favourite";
-import Context from "./Context";
 import Home from "./home/Home";
+import Header from "./image/Header";
+import "./color.css";
 function App() {
   // const [play, updateplay] = useState([]);
   // const items = [];
@@ -20,25 +21,23 @@ function App() {
 
   //
   return (
-    <>
-      <h1 className="display 1">PLAYLIST CREATOR</h1>
-      <div className="container-fluid min-vh-100 d-flex flex-row">
-        <div>
+    <div className="">
+      <Header />
+      <div className="row expand-width fill">
+        <div className="col-2 nav-bg">
           <Nav />
         </div>
-        <div className="w-100 flex-grow-1">
-          <div>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/Search" element={<SearchBar />} />
+        <div className="col container-fluid p-5">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Search" element={<SearchBar />} />
 
-              <Route path="/playlist" element={<Playlist />} />
-              <Route path="/favourite" element={<Favourite />} />
-            </Routes>
-          </div>
+            <Route path="/playlist" element={<Playlist />} />
+            <Route path="/favourite" element={<Favourite />} />
+          </Routes>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

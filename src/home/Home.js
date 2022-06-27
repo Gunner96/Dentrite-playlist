@@ -1,15 +1,18 @@
 import React from "react";
 import Favourite from "../favourite/Favourite";
-import Playlist from "../playlist/Playlist";
+import Playlisthome from "./Playlisthome";
 export default function Home() {
   return (
     <div className="justify-content-center ">
       <div>
-        <h1>Playlist</h1>
-        <Playlist />
+        <h3>CURRENT PLAYLIST</h3>
+        <hr />
+
+        <div className="row row-cols-1 row-cols-md-1 g-4">
+          <Playlisthome />
+        </div>
       </div>
       <div>
-        <h1>Favourite</h1>
         <Favourite />
       </div>
     </div>

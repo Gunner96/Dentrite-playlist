@@ -13,10 +13,6 @@ export default function Search() {
   const [suggest, updateSuggestion] = useState([]);
   const [suggestionStatus, changeSuggestionStatus] = useState(true);
 
-  // const { value } = useContext(PlaylistProvider);
-  // const [state, dispatch] = value;
-
-  // const urlling = "https://deezerdevs-deezer.p.rapidapi.com/search";
   useEffect(() => {
     const newSuggest = Shazam(searchText);
     newSuggest.then((value) => {
@@ -24,48 +20,38 @@ export default function Search() {
     });
   }, [searchText]);
 
-  function activeSearch(e) {
-    console.log("firs", e.target.value);
-    updateText(e.target.value);
-    updateres("");
-    changeSuggestionStatus(true);
-  }
-
-  function displaySearch(e) {
+  // function displaySearch() {
+  //   const searchResult = Shazam(searchText);
+  //   searchResult.then((value) => {
+  //     updateres(value);
+  //   });
+  //   changeSuggestionStatus(false);
+  // }
+  useEffect(() => {
     const searchResult = Shazam(searchText);
     searchResult.then((value) => {
       updateres(value);
     });
-    changeSuggestionStatus(false);
-  }
+  }, [searchText]);
 
   return (
-    <div>
-      <label>
-        {/* <input type="text" onChange={activeSearch} value={searchText} /> */}
-        {/* <button onClick={displaySearch}>Search</button> */}
+    <div className="row justify-content-center pt-5 search-page">
+      <div className="col-lg-6 ">
+        <input
+          onChange={(e) => {
+            updateText(e.target.value);
+          }}
+          value={searchText}
+          type="text"
+          className="form-control search-bar"
+          placeholder="Search Track/Artist"
+          aria-label="Search"
+          aria-describedby="basic-addon1"
+        />
+        <label for="formFile" class="form-label"></label>
+      </div>
 
-        <div className="input-group mb-3">
-          <input
-            onChange={activeSearch}
-            value={searchText}
-            type="text"
-            className="form-control"
-            placeholder="Search Track/Artist"
-            aria-label="Search"
-            aria-describedby="basic-addon1"
-          />
-          <button
-            type="button"
-            onClick={displaySearch}
-            on
-            className="btn btn-primary input-group-text"
-          >
-            Search
-          </button>
-        </div>
-
-        {suggestionStatus && (
+      {/* {suggestionStatus && (
           <Suggestion
             style={{ zIndex: "100" }}
             suggest={suggest}
@@ -73,8 +59,11 @@ export default function Search() {
             alterStat={changeSuggestionStatus}
           />
         )}
-        {!suggestionStatus && res && <Loader result={res} />}
-      </label>
+        {!suggestionStatus && res && <Loader result={res} />} */}
+      <hr />
+      <div className="row-2 justify-content-center">
+        <Loader result={res} />
+      </div>
     </div>
   );
 }

@@ -4,14 +4,21 @@ import { Link } from "react-router-dom";
 export default function Favourite() {
   const { value } = useContext(PlaylistProvider);
   const [state, dispatch] = value;
+  const playlist = Object.keys(localStorage);
+  let rawresult = [];
+  playlist.forEach((key) => {
+    rawresult = [...rawresult, ...state[key]];
+  });
+  console.log("all result", rawresult);
 
-  function removefromfav(val) {
-    dispatch({ type: "STAR", value: val });
-  }
-  const fail = <Link to="/playlist">Add favourites from playlist</Link>;
+  const fail = (
+    <Link to="/playlist">
+      <h4>Currently empty, Add favourites from playlist</h4>
+    </Link>
+  );
 
-  const allresult = state
-    ? state
+  const allresult = rawresult
+    ? rawresult
         .filter((val) => val.favourite)
         .map((value) => {
           return (
@@ -29,24 +36,13 @@ export default function Favourite() {
               <div className="card-body">
                 <p>{value.title}</p>
                 <p>{value.artist.name}</p>
-                <div className="col row-cols-1 justify-content-first">
-                  <button
-                    className="btn"
-                    type="button"
-                    onClick={() => {
-                      removefromfav(value);
-                    }}
-                  >
-                    {value.favourite ? (
-                      <i
-                        className="bi bi-star-fill"
-                        style={{ color: "yellow" }}
-                      ></i>
-                    ) : (
-                      <i className="bi bi-star"></i>
-                    )}
-                  </button>
-                </div>
+                <i
+                  className="bi bi-star-fill"
+                  style={{
+                    color: value.favourite ? "#FF5B00" : "grey",
+                    fontSize: "20px",
+                  }}
+                ></i>
               </div>
             </div>
           );
@@ -57,6 +53,8 @@ export default function Favourite() {
 
   return (
     <div className="row row-cols-1 row-cols-md-1 g-4 justify-content-first mt-2">
+      <h3>FAVOURITES</h3>
+      <hr />
       {allresult.length > 0 ? allresult : fail}
     </div>
   );

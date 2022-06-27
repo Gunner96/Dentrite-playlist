@@ -2,35 +2,39 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function Nav() {
   return (
-    <div>
-      {/* <Link to="/">Search</Link>
-      <Link to="/playlist">Playlist</Link>
-      <Link to="/favourite">Favourites</Link> */}
-
-      <ul className="nav flex-column">
-        <li className="nav-item">
+    <div className="col mt-5">
+      <ul className="nav row g-1">
+        <li className="nav-item row">
           <Link to="/" className="nav-link active" aria-current="page" href="#">
-            Home
+            <p className="linker">
+              <i className="bi bi-list mx-2"></i>Home
+            </p>
           </Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item row">
           <Link
             to="/Search"
             className="nav-link active"
             aria-current="page"
             href="#"
           >
-            Search
+            <p className="linker .d-sm-none .d-md-block">
+              <i className="bi bi-search mx-2"></i>Search
+            </p>
           </Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item row">
           <Link to="/playlist" className="nav-link" href="#">
-            Playlist
+            <p className="linker">
+              <i className="bi bi-play-circle mx-2"></i>Playlist
+            </p>
           </Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item row">
           <Link to="/favourite" className="nav-link" href="#">
-            Favourite
+            <p className="linker">
+              <i className="bi bi-heart-fill mx-2"></i>Favourite
+            </p>
           </Link>
         </li>
       </ul>
