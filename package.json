@@ -1,6 +1,9 @@
 {
   "name": "react-submission",
   "version": "0.1.0",
+  "engines": {
+    "node": "6.13.1"
+  },
   "homepage": "https://Gunner96.github.io/Dentrite-playlist",
   "private": true,
   "dependencies": {

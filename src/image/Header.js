@@ -2,7 +2,7 @@ import React from "react";
 import header from "./header.jpg";
 export default function Header() {
   const styles = {
-    backgroundImage: `url(${header})`,
+    // backgroundImage: `url(${header})`,
     height: "150px",
     maxWidth: "100%",
     backgroundSize: "cover",
