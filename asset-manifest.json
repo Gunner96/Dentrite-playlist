@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Dentrite-playlist/static/css/main.720835da.css",
+    "main.js": "/Dentrite-playlist/static/js/main.20ad08fb.js",
+    "static/media/header.jpg": "/Dentrite-playlist/static/media/header.94097c405951e9f7d832.jpg",
+    "index.html": "/Dentrite-playlist/index.html",
+    "main.720835da.css.map": "/Dentrite-playlist/static/css/main.720835da.css.map",
+    "main.20ad08fb.js.map": "/Dentrite-playlist/static/js/main.20ad08fb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.720835da.css",
+    "static/js/main.20ad08fb.js"
+  ]
+}
