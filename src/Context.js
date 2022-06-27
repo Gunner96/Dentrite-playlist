@@ -6,11 +6,13 @@ let InitialList = {};
 
 const playlist = Object.keys(localStorage);
 
-playlist.forEach((element) => {
-  var list = JSON.parse(localStorage.getItem(element));
-  InitialList[element] = list;
-});
-console.log("initial", InitialList);
+if (playlist && playlist.length > 0) {
+  playlist.forEach((element) => {
+    var list = JSON.parse(localStorage.getItem(element));
+    InitialList[element] = list;
+  });
+  console.log("initial", InitialList);
+}
 
 // if (localPlaylist) {
 //   InitialList = [...localPlaylist];

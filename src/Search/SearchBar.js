@@ -48,7 +48,7 @@ export default function Search() {
           aria-label="Search"
           aria-describedby="basic-addon1"
         />
-        <label for="formFile" class="form-label"></label>
+        <label htmlFor="formFile" className="form-label"></label>
       </div>
 
       {/* {suggestionStatus && (
